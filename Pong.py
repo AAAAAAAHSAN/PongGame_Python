@@ -2,7 +2,7 @@ import turtle
 
 main_window = turtle.Screen()
 main_window.title("POng by ahsan")
-main_window.bgcolor("gray")
+main_window.bgcolor("purple")
 main_window.setup(width=800, height=600)
 main_window.tracer(0)
 
@@ -30,7 +30,7 @@ paddle_b.goto(350, 0)
 # ball
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape("square")
+ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(-0, 0)
@@ -43,8 +43,9 @@ pen.speed(0)
 pen.color("yellow")
 pen.penup()
 pen.hideturtle()
-pen.goto(0,260)
+pen.goto(0, 260)
 pen.write("Player A: 0      Player B: 0", align="center", font=("Courier", 20, "normal"))
+
 
 # functions
 def paddle_a_up():
@@ -111,9 +112,9 @@ while True:
 
     # paddle and ball collision
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -40):
-        ball.setx(340)
+        ball.setx(335)
         ball.dx *= -1
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() -40):
-        ball.setx(-340)
+        ball.setx(-335)
         ball.dx *= -1
